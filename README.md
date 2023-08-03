@@ -7,14 +7,14 @@ Deployments:
 * Prod: <https://team03.dokku-06.cs.ucsb.edu>
 * QA: <https://team03-qa.dokku-06.cs.ucsb.edu>
 
-| Table                     | Name         | Github Id    |
-|---------------------------|--------------|--------------|
-| UCSBDiningCommonsMenuItem | Edwin Yee    | Edwin-Yee    |
-| UCSBOrganization          | Cindy Lin    | clin947      |
-| RecommendationRequest     | Ryan He      | ryan-he-8    |
-| MenuItemReview            | Andrew Yu    | andrewyu6581 |
-| HelpRequest               | Mia Zhou     | mier2        |
-| Articles                  | (unassigned) |              |
+| Table                     | Name         | Github Id |
+|---------------------------|--------------|-----------|
+| UCSBDiningCommonsMenuItem | Edwin Yee    | Edwin-Yee |
+| UCSBOrganization          | Cindy Lin    | clin947   |
+| RecommendationRequest     | Ryan He      | ryan-he-8 |
+| MenuItemReview            | Andrew Yu    | hanabicel |
+| HelpRequest               | Mia Zhou     | mier2     |
+| Articles                  | (unassigned) |           |
 
 Remember though, that in spite of these initial  assignments, it is still
 a team project.  Please help other team members to finish their work
