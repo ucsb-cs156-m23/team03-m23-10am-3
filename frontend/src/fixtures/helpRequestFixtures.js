@@ -6,7 +6,7 @@ const helpRequestFixtures = {
         "tableOrBreakoutRoom": "5",
         "requestTime": "2022-01-02T12:00:00",
         "explanation": "azarshi",
-        "solved": false
+        "solved": "false"
     },
     threeHelpRequests: [
         {
@@ -16,7 +16,7 @@ const helpRequestFixtures = {
             "tableOrBreakoutRoom": "5",
             "requestTime": "2022-01-02T12:00:00",
             "explanation": "azarshi",
-            "solved": false
+            "solved": "false"
         },
         {
             "id": 2,
@@ -25,7 +25,7 @@ const helpRequestFixtures = {
             "tableOrBreakoutRoom": "7",
             "requestTime": "2022-04-03T12:00:00",
             "explanation": "xiao xue",
-            "solved": true
+            "solved": "true"
            
         },
         {
@@ -35,7 +35,7 @@ const helpRequestFixtures = {
             "tableOrBreakoutRoom": "8",
             "requestTime": "2022-07-04T12:00:00",
             "explanation": "bei jia er hai bao",
-            "solved": false
+            "solved": "false"
         }
     ]
 };
