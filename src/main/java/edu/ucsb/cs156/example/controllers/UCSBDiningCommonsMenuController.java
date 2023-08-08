@@ -54,7 +54,6 @@ public class UCSBDiningCommonsMenuController extends ApiController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/post")
     public UCSBDiningCommonsMenu postMenu(
-        @Parameter(name="id") @RequestParam Long id,
         @Parameter(name="diningCommonsCode") @RequestParam String diningCommonsCode, 
         @Parameter(name="name") @RequestParam String name,
         @Parameter(name="station") @RequestParam String station
