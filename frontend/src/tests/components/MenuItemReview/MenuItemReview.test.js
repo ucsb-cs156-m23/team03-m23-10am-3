@@ -47,11 +47,11 @@ describe("MenuItemReviewForm tests", () => {
 
         fireEvent.click(submitButton);
 
-        await screen.findByText(/Item Id is required./);
-        expect(screen.getByText(/Reviewer Email is required./)).toBeInTheDocument();
+        await screen.findByText(/Item ID is required./);
+        expect(screen.getByText(/Reviewer email is required./)).toBeInTheDocument();
         expect(screen.getByText(/Stars is required./)).toBeInTheDocument();
-        expect(screen.getByText(/Date Reviewed is required./)).toBeInTheDocument();
-        expect(screen.getByText(/Comments is required./)).toBeInTheDocument();
+        expect(screen.getByText(/Date reviewed is required./)).toBeInTheDocument();
+        expect(screen.getByText(/Comment is required./)).toBeInTheDocument();
     });
 
     test("No error messsages on good input", async () => {
@@ -80,9 +80,9 @@ describe("MenuItemReviewForm tests", () => {
 
         await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
 
-        expect(screen.queryByText(/Item Id must be a number/)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Reviewer Email must be a valid email address/)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Stars must be a number between 1 and 5/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Item ID must be a valid number/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Reviewer email must be a valid email address/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Stars must be an integer from 1 to 5/)).not.toBeInTheDocument();
     });
 
     test("that navigate(-1) is called when Cancel is clicked", async () => {

@@ -50,7 +50,7 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
                     type="text"
                     isInvalid={Boolean(errors.itemId)}
                     {...register("itemId", {
-                        required: "Item Id is required.",
+                        required: "Item ID is required.",
                         pattern: {
                             value: int_regex,
                             message: "Item ID must be a valid number."
