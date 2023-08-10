@@ -5,7 +5,7 @@ import { Navigate } from 'react-router-dom'
 import { useBackend, useBackendMutation } from "main/utils/useBackend";
 import { toast } from "react-toastify";
 
-export default function RestaurantEditPage({storybook=false}) {
+export default function HelpRequestEditPage({storybook=false}) {
     let { id } = useParams();
 
     const { data: helpRequest, _error, _status } =
