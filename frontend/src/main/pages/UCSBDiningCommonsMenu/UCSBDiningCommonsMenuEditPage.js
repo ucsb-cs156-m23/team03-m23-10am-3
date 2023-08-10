@@ -28,9 +28,9 @@ export default function UCSBDiningCommonsMenuEditPage({storybook=false}) {
             id: ucsbdiningcommonsmenu.id,
         },
         data: {
-          diningCommonsCode: ucsbdiningcommonsmenu.diningCommonsCode,
-          name: ucsbdiningcommonsmenu.name,
-          station: ucsbdiningcommonsmenu.station 
+            diningCommonsCode: ucsbdiningcommonsmenu.diningCommonsCode,
+            name: ucsbdiningcommonsmenu.name,
+            station: ucsbdiningcommonsmenu.station,
         }
     });
 
