@@ -9,7 +9,7 @@ export default {
 
 const Template = (args) => {
     return (
-        <MenuItemReviewForm {...args} />
+        <MenuItemReview {...args} />
     )
 };
 
