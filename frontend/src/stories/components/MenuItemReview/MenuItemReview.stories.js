@@ -4,7 +4,7 @@ import { menuItemReviewFixtures } from 'fixtures/menuItemReviewFixtures';
 
 export default {
     title: 'components/MenuItemReview/MenuItemReviewForm',
-    component: MenuItemReviewForm
+    component: MenuItemReview
 };
 
 const Template = (args) => {
