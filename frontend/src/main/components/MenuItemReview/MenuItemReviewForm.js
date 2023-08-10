@@ -43,10 +43,10 @@ function MenuItemReviewForm({ initialContents, submitAction, buttonLabel = "Crea
             )}
 
             <Form.Group className="mb-3" >
-                <Form.Label htmlFor="item-id">Item Id</Form.Label>
+                <Form.Label htmlFor="itemId">Item Id</Form.Label>
                 <Form.Control
-                    data-testid={testIdPrefix + "-item-id"}
-                    id="item-id"
+                    data-testid={testIdPrefix + "-itemId"}
+                    id="itemId"
                     type="text"
                     isInvalid={Boolean(errors.itemId)}
                     {...register("itemId", {
