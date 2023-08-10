@@ -44,10 +44,10 @@ function UCSBDiningCommonsMenuForm({ initialContents, submitAction, buttonLabel 
                     type="text"
                     isInvalid={Boolean(errors.diningCommonsCode )}
                     {...register("diningCommonsCode", {
-                        required: "diningCommonsCode is required",
+                        required: "diningCommonsCode is required.",
                         maxLength : {
                             value: 30,
-                            message: "Max length 30 characters"
+                            message: "diningCommonsCode max length 30 characters"
                         }
                     })}
                 />
@@ -64,10 +64,10 @@ function UCSBDiningCommonsMenuForm({ initialContents, submitAction, buttonLabel 
                     type="text"
                     isInvalid={Boolean(errors.name)}
                     {...register("name", {
-                        required: "Name is required",
+                        required: "Name is required.",
                         maxLength : {
                             value: 30,
-                            message: "Max length 30 characters"
+                            message: "name max length 30 characters"
                         }
                     })}
                 />
