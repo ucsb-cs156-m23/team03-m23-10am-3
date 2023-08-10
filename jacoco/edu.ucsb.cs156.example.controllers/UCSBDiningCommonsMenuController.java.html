@@ -54,21 +54,20 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     @PreAuthorize(&quot;hasRole('ROLE_ADMIN')&quot;)
     @PostMapping(&quot;/post&quot;)
     public UCSBDiningCommonsMenu postMenu(
-        @Parameter(name=&quot;id&quot;) @RequestParam Long id,
         @Parameter(name=&quot;diningCommonsCode&quot;) @RequestParam String diningCommonsCode, 
         @Parameter(name=&quot;name&quot;) @RequestParam String name,
         @Parameter(name=&quot;station&quot;) @RequestParam String station
         )
         {
 
-<span class="fc" id="L64">        UCSBDiningCommonsMenu menu = new UCSBDiningCommonsMenu();</span>
-<span class="fc" id="L65">        menu.setDiningCommonsCode(diningCommonsCode);</span>
-<span class="fc" id="L66">        menu.setName(name);</span>
-<span class="fc" id="L67">        menu.setStation(station);</span>
+<span class="fc" id="L63">        UCSBDiningCommonsMenu menu = new UCSBDiningCommonsMenu();</span>
+<span class="fc" id="L64">        menu.setDiningCommonsCode(diningCommonsCode);</span>
+<span class="fc" id="L65">        menu.setName(name);</span>
+<span class="fc" id="L66">        menu.setStation(station);</span>
 
-<span class="fc" id="L69">        UCSBDiningCommonsMenu savedMenu = ucsbDiningCommonsMenuRepository.save(menu);</span>
+<span class="fc" id="L68">        UCSBDiningCommonsMenu savedMenu = ucsbDiningCommonsMenuRepository.save(menu);</span>
 
-<span class="fc" id="L71">        return savedMenu;</span>
+<span class="fc" id="L70">        return savedMenu;</span>
     }
 
     @Operation(summary= &quot;Delete a UCSBDiningCommonsMenu item&quot;)
@@ -76,11 +75,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     @DeleteMapping(&quot;&quot;)
     public Object deleteMenuItem(
             @Parameter(name=&quot;id&quot;) @RequestParam Long id) {
-<span class="fc" id="L79">        UCSBDiningCommonsMenu menu = ucsbDiningCommonsMenuRepository.findById(id)</span>
-<span class="fc" id="L80">                .orElseThrow(() -&gt; new EntityNotFoundException(UCSBDiningCommonsMenu.class, id));</span>
+<span class="fc" id="L78">        UCSBDiningCommonsMenu menu = ucsbDiningCommonsMenuRepository.findById(id)</span>
+<span class="fc" id="L79">                .orElseThrow(() -&gt; new EntityNotFoundException(UCSBDiningCommonsMenu.class, id));</span>
 
-<span class="fc" id="L82">        ucsbDiningCommonsMenuRepository.delete(menu);</span>
-<span class="fc" id="L83">        return genericMessage(&quot;UCSBDiningCommonsMenu with id %s deleted&quot;.formatted(id));</span>
+<span class="fc" id="L81">        ucsbDiningCommonsMenuRepository.delete(menu);</span>
+<span class="fc" id="L82">        return genericMessage(&quot;UCSBDiningCommonsMenu with id %s deleted&quot;.formatted(id));</span>
     }
 
     @Operation(summary= &quot;Update a single UCSBDiningCommonsMenu item&quot;)
@@ -90,17 +89,17 @@ import io.swagger.v3.oas.annotations.tags.Tag;
             @Parameter(name=&quot;id&quot;) @RequestParam Long id,
             @RequestBody @Valid UCSBDiningCommonsMenu incoming) {
 
-<span class="fc" id="L93">        UCSBDiningCommonsMenu menu = ucsbDiningCommonsMenuRepository.findById(id)</span>
-<span class="fc" id="L94">                .orElseThrow(() -&gt; new EntityNotFoundException(UCSBDiningCommonsMenu.class, id));</span>
+<span class="fc" id="L92">        UCSBDiningCommonsMenu menu = ucsbDiningCommonsMenuRepository.findById(id)</span>
+<span class="fc" id="L93">                .orElseThrow(() -&gt; new EntityNotFoundException(UCSBDiningCommonsMenu.class, id));</span>
 
 
-<span class="fc" id="L97">        menu.setDiningCommonsCode(incoming.getDiningCommonsCode());  </span>
-<span class="fc" id="L98">        menu.setName(incoming.getName());</span>
-<span class="fc" id="L99">        menu.setStation(incoming.getStation());</span>
+<span class="fc" id="L96">        menu.setDiningCommonsCode(incoming.getDiningCommonsCode());  </span>
+<span class="fc" id="L97">        menu.setName(incoming.getName());</span>
+<span class="fc" id="L98">        menu.setStation(incoming.getStation());</span>
 
-<span class="fc" id="L101">        ucsbDiningCommonsMenuRepository.save(menu);</span>
+<span class="fc" id="L100">        ucsbDiningCommonsMenuRepository.save(menu);</span>
 
-<span class="fc" id="L103">        return menu;</span>
+<span class="fc" id="L102">        return menu;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
