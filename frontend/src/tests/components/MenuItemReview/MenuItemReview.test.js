@@ -120,9 +120,9 @@ describe("MenuItemReviewForm tests", () => {
         fireEvent.change(commentsField, { target: { value: 'good-input' } });
         fireEvent.click(submitButton);
 
-        await screen.findByText(/Item Id must be a number/);
-        expect(screen.getByText(/Reviewer Email must be a valid email address/)).toBeInTheDocument();
-        expect(screen.getByText(/Stars must be a number between 1 and 5/)).toBeInTheDocument();
-        expect(screen.getByText(/Date Reviewed is required/)).toBeInTheDocument();
+        await screen.findByText(/Item ID must be a valid number./);
+        expect(screen.getByText(/Reviewer email must be a valid email address./)).toBeInTheDocument();
+        expect(screen.getByText(/Stars must be an integer from 1 to 5./)).toBeInTheDocument();
+        expect(screen.getByText(/Date reviewed is required./)).toBeInTheDocument();
     });
 });
