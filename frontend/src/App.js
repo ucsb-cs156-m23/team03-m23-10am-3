@@ -27,7 +27,6 @@ import UCSBDiningCommonsMenuIndexPage from "main/pages/UCSBDiningCommonsMenu/UCS
 import UCSBDiningCommonsMenuCreatePage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuCreatePage";
 import UCSBDiningCommonsMenuEditPage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuEditPage";
 
-
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
 import "bootstrap/dist/css/bootstrap.css";
