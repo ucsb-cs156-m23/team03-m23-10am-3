@@ -3,7 +3,7 @@ import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
 import { menuItemReviewFixtures } from 'fixtures/menuItemReviewFixtures';
 import { rest } from "msw";
-import { MenuItemReviewIndexPage } from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
+import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
 
 export default {
     title: 'pages/MenuItemReview/MenuItemReviewIndexPage',
