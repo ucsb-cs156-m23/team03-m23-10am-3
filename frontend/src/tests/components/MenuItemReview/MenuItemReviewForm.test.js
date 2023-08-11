@@ -12,7 +12,7 @@ jest.mock('react-router-dom', () => ({
 
 describe("MenuItemReviewForm tests", () => {
 
-    const expectedHeaders = ["Item Id", "Reviewer Email", "Stars", "Date Reviewed", "Comments", "Create"]
+    const expectedHeaders = ["Item ID", "Reviewer Email", "Stars", "Date Reviewed", "Comments", "Create"]
     const testIdPrefix = "MenuItemReviewForm";
 
     test("renders correctly", async () => {
@@ -21,12 +21,13 @@ describe("MenuItemReviewForm tests", () => {
                 <MenuItemReviewForm />
             </Router>
         );
+
         expectedHeaders.forEach((header) => {
             expect(screen.getByText(header)).toBeInTheDocument();
         });
     });
 
-    test("renders correctly when passing in MenuItemReview", async () => {
+    test("renders correctly when passing in a MenuItemReview", async () => {
         render(
             <Router  >
                 <MenuItemReviewForm initialContents={menuItemReviewFixtures.oneMenuItemReview} />
@@ -36,7 +37,7 @@ describe("MenuItemReviewForm tests", () => {
         expect(screen.getByText((`Id`))).toBeInTheDocument();
     });
 
-    test("Correct error messsages on missing input", async () => {
+    test("Correct Error messsages on missing input", async () => {
         render(
             <Router  >
                 <MenuItemReviewForm />
@@ -48,20 +49,20 @@ describe("MenuItemReviewForm tests", () => {
         fireEvent.click(submitButton);
 
         await screen.findByText(/Item ID is required./);
-        expect(screen.getByText(/Reviewer email is required./)).toBeInTheDocument();
+        expect(screen.getByText(/Reviewer Email is required./)).toBeInTheDocument();
         expect(screen.getByText(/Stars is required./)).toBeInTheDocument();
-        expect(screen.getByText(/Date reviewed is required./)).toBeInTheDocument();
-        expect(screen.getByText(/Comment is required./)).toBeInTheDocument();
+        expect(screen.getByText(/Date Reviewed is required./)).toBeInTheDocument();
+        expect(screen.getByText(/Comments is required./)).toBeInTheDocument();
     });
 
-    test("No error messsages on good input", async () => {
+    test("No Error messsages on good input", async () => {
         const mockSubmitAction = jest.fn();
+
         render(
             <Router  >
                 <MenuItemReviewForm submitAction={mockSubmitAction} />
             </Router>
         );
-
         await screen.findByTestId("MenuItemReviewForm-itemId");
 
         const itemIdField = screen.getByTestId("MenuItemReviewForm-itemId");
@@ -74,15 +75,16 @@ describe("MenuItemReviewForm tests", () => {
         fireEvent.change(itemIdField, { target: { value: '1' } });
         fireEvent.change(reviewerEmailField, { target: { value: 'test@ucsb.edu' } });
         fireEvent.change(starsField, { target: { value: '5' } });
-        fireEvent.change(dateReviewedField, { target: { value: '2021-08-10T12:00' } });
-        fireEvent.change(commentsField, { target: { value: 'Second' } });
+        fireEvent.change(dateReviewedField, { target: { value: '2021-08-06T21:31:47.861Z' } });
+        fireEvent.change(commentsField, { target: { value: 'test comment' } });
         fireEvent.click(submitButton);
 
         await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
 
-        expect(screen.queryByText(/Item ID must be a valid number/)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Reviewer email must be a valid email address/)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Stars must be an integer from 1 to 5/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Item ID must be an integer/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Reviewer Email must be a valid email address/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Stars must be an integer between 1 and 5/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Date Reviewed must be a valid date/)).not.toBeInTheDocument();
     });
 
     test("that navigate(-1) is called when Cancel is clicked", async () => {
@@ -99,7 +101,7 @@ describe("MenuItemReviewForm tests", () => {
         await waitFor(() => expect(mockedNavigate).toHaveBeenCalledWith(-1));
     });
 
-    test("Collect error messages on bad input", async () => {
+    test("Collect Error messages on bad input", async () => {
         render(
             <Router  >
                 <MenuItemReviewForm />
@@ -120,9 +122,9 @@ describe("MenuItemReviewForm tests", () => {
         fireEvent.change(commentsField, { target: { value: 'good-input' } });
         fireEvent.click(submitButton);
 
-        await screen.findByText(/Item ID must be a valid number/);
-        expect(screen.getByText(/Reviewer email must be a valid email address/)).toBeInTheDocument();
-        expect(screen.getByText(/Stars must be an integer from 1 to 5/)).toBeInTheDocument();
-        expect(screen.getByText(/Date reviewed is required/)).toBeInTheDocument();
+        await screen.findByText(/Item ID must be an integer/);
+        expect(screen.getByText(/Reviewer Email must be a valid email address/)).toBeInTheDocument();
+        expect(screen.getByText(/Stars must be an integer between 1 and 5/)).toBeInTheDocument();
+        expect(screen.getByText(/Date Reviewed must be a valid date/)).toBeInTheDocument();
     });
 });
