@@ -31,7 +31,6 @@ import UCSBDiningCommonsMenuEditPage from "main/pages/UCSBDiningCommonsMenu/UCSB
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
 import "bootstrap/dist/css/bootstrap.css";
-import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
 
 function App() {
     const { data: currentUser } = useCurrentUser();
