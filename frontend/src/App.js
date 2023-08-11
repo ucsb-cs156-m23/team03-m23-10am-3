@@ -11,6 +11,10 @@ import RestaurantIndexPage from "main/pages/Restaurants/RestaurantIndexPage";
 import RestaurantCreatePage from "main/pages/Restaurants/RestaurantCreatePage";
 import RestaurantEditPage from "main/pages/Restaurants/RestaurantEditPage";
 
+import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
+import HelpRequestCreatePage from "main/pages/HelpRequest/HelpRequestCreatePage";
+import HelpRequestEditPage from "main/pages/HelpRequest/HelpRequestEditPage";
+
 import PlaceholderIndexPage from "main/pages/Placeholder/PlaceholderIndexPage";
 import PlaceholderCreatePage from "main/pages/Placeholder/PlaceholderCreatePage";
 import PlaceholderEditPage from "main/pages/Placeholder/PlaceholderEditPage";
@@ -18,6 +22,11 @@ import PlaceholderEditPage from "main/pages/Placeholder/PlaceholderEditPage";
 import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
 import MenuItemReviewCreatePage from "main/pages/MenuItemReview/MenuItemReviewCreatePage";
 import MenuItemReviewEditPage from "main/pages/MenuItemReview/MenuItemReviewEditPage";
+
+import UCSBDiningCommonsMenuIndexPage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuIndexPage";
+import UCSBDiningCommonsMenuCreatePage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuCreatePage";
+import UCSBDiningCommonsMenuEditPage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuEditPage";
+
 
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
