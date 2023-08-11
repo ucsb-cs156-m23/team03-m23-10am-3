@@ -12,7 +12,7 @@ const menuItemReviewFixtures = {
 
     threeMenuItemReviews: [
         {
-            "id": 2,
+            "id": 1,
             "itemId": 1,
             "reviewerEmail": "a@ucsb.edu",
             "stars": 1,
@@ -20,7 +20,7 @@ const menuItemReviewFixtures = {
             "comments": "First"
         },
         {
-            "id": 3,
+            "id": 2,
             "itemId": 2,
             "reviewerEmail": "b@ucsb.edu",
             "stars": 2,
@@ -28,7 +28,7 @@ const menuItemReviewFixtures = {
             "comments": "Second"
         },
         {
-            "id": 4,
+            "id": 3,
             "itemId": 3,
             "reviewerEmail": "c@ucsb.edu",
             "stars": 3,
