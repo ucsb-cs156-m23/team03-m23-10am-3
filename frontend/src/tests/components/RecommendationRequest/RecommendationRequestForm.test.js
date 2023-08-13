@@ -64,7 +64,7 @@ describe("RecommendationRequestForm tests", () => {
         expect(screen.getByText(/Professor Email must be a valid email./)).toBeInTheDocument();
         // expect(screen.getByText(/dateRequested must be in ISO format./)).toBeInTheDocument();
         // expect(screen.getByText(/dateNeeded must be in ISO format./)).toBeInTheDocument();
-        expect(screen.getByText(/Done must either be \"true\" or \"false\"./)).toBeInTheDocument();
+        expect(screen.getByText(/Done must either be "true" or "false"./)).toBeInTheDocument();
     });
 
     test("Correct Error messsages on missing input", async () => {
@@ -122,7 +122,7 @@ describe("RecommendationRequestForm tests", () => {
         expect(screen.queryByText(/Professor Email must be a valid email/)).not.toBeInTheDocument();
         // expect(screen.queryByText(/dateRequested must be in ISO format/)).not.toBeInTheDocument();
         // expect(screen.queryByText(/dateNeeded must be in ISO format/)).not.toBeInTheDocument();
-        expect(screen.queryByText(/Done must either be \"true\" or \"false\"/)).not.toBeInTheDocument();
+        expect(screen.queryByText(/Done must either be "true" or "false"/)).not.toBeInTheDocument();
     });
 
 

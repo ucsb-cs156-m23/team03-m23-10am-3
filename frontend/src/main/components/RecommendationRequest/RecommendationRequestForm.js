@@ -131,7 +131,7 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
                 </Col>
                 <Col>
                     <Form.Group className="mb-3" >
-                        <Form.Label htmlFor="done">Done</Form.Label>
+                        <Form.Label htmlFor="done">Completed</Form.Label>
                         <Form.Control
                             data-testid="RecommendationRequestForm-done"
                             id="done"
@@ -145,7 +145,7 @@ function RecommendationRequestForm({ initialContents, submitAction, buttonLabel 
                         />
                         <Form.Control.Feedback type="invalid">
                             {errors.done?.message}
-                            {errors.done?.type === 'validate' && 'Done must either be \"true\" or \"false\".'}
+                            {errors.done?.type === 'validate' && 'Done must either be "true" or "false".'}
                         </Form.Control.Feedback>
                     </Form.Group>
                 </Col>
