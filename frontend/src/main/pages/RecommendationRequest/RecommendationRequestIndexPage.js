@@ -31,12 +31,20 @@ export default function RecommendationRequestIndexPage() {
       { method: "GET", url: "/api/recommendationrequest/all" },
       []
     );
-
+  for (let i=0; i < recRequests.length; i++) {
+    if (recRequests[i].done === true) {
+      recRequests[i].done = "true";
+    }
+    else {
+      recRequests[i].done = "false"
+    }
+  }
+  console.log("done", typeof(recRequests[0].done))
   return (
     <BasicLayout>
       <div className="pt-2">
         {createButton()}
-        <h1>RecommendationRequests</h1>
+        <h1>Recommendation Requests</h1>
         <RecommendationRequestsTable recrequests={recRequests} currentUser={currentUser} />
       </div>
     </BasicLayout>
