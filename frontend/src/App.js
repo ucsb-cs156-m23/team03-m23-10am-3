@@ -106,8 +106,22 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/recommendationrequest" element={<RecommendationRequestIndexPage />} />
               <Route exact path="/ucsbdiningcommonsmenu" element={<UCSBDiningCommonsMenuIndexPage/>} />
+            </>
+          )
+        }
+        {
+          hasRole(currentUser, "ROLE_ADMIN") && (
+            <>
+              <Route exact path="/ucsbdiningcommonsmenu/edit/:id" element={<UCSBDiningCommonsMenuEditPage />} />
+              <Route exact path="/ucsbdiningcommonsmenu/create" element={<UCSBDiningCommonsMenuCreatePage />} />
+            </>
+          )
+        }
+        {
+          hasRole(currentUser, "ROLE_USER") && (
+            <>
+              <Route exact path="/recommendationrequest" element={<RecommendationRequestIndexPage />} />
             </>
           )
         }
@@ -116,8 +130,6 @@ function App() {
             <>
               <Route exact path="/recommendationrequest/edit/:id" element={<RecommendationRequestEditPage />} />
               <Route exact path="/recommendationrequest/create" element={<RecommendationRequestCreatePage />} />
-              <Route exact path="/ucsbdiningcommonsmenu/edit/:id" element={<UCSBDiningCommonsMenuEditPage />} />
-              <Route exact path="/ucsbdiningcommonsmenu/create" element={<UCSBDiningCommonsMenuCreatePage />} />
             </>
           )
         }
