@@ -31,15 +31,6 @@ export default function RecommendationRequestIndexPage() {
       { method: "GET", url: "/api/recommendationrequest/all" },
       []
     );
-  for (let i=0; i < recRequests.length; i++) {
-    if (recRequests[i].done === true) {
-      recRequests[i].done = "true";
-    }
-    else {
-      recRequests[i].done = "false"
-    }
-  }
-  console.log("done", typeof(recRequests[0].done))
   return (
     <BasicLayout>
       <div className="pt-2">
