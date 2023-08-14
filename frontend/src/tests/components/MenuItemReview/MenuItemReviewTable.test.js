@@ -36,7 +36,6 @@ describe("MenuItemReviewTable tests", () => {
             expectedHeaders.forEach((header) => {
                 expect(screen.getByText(header)).toBeInTheDocument();
             });
-
             expectedFields.forEach((field) => {
                 expect(screen.getByTestId(`${testIdPrefix}-${field}`)).toBeInTheDocument();
             });
@@ -47,7 +46,6 @@ describe("MenuItemReviewTable tests", () => {
     test("Has the expected column headers, content and buttons for admin user", () => {
         // arrange
         const currentUser = currentUserFixtures.adminUser;
-
         // act
         render(
         <QueryClientProvider client={queryClient}>
@@ -122,7 +120,6 @@ describe("MenuItemReviewTable tests", () => {
     test("Edit button navigates to the edit page", async () => {
         // arrange
         const currentUser = currentUserFixtures.adminUser;
-
         // act
         render(
             <QueryClientProvider client={queryClient}>
@@ -135,16 +132,14 @@ describe("MenuItemReviewTable tests", () => {
         // assert
         const editButton = screen.getByTestId(`MenuItemReviewTable-cell-row-0-col-Edit-button`);
         expect(editButton).toBeInTheDocument();
-
         fireEvent.click(editButton);
+        await waitFor(() => expect(mockedNavigate).toHaveBeenCalledWith(`/menuitemreviews/edit/${menuItemReviewFixtures.threeMenuItemReviews[0].id}`));
 
-        await waitFor(() => expect(mockedNavigate).toHaveBeenCalledWith(`/menuitemreview/edit/${menuItemReviewFixtures.threeMenuItemReviews[0].id}`));
     });
 
     test("Delete button calls delete callback", async () => {
         // arrange
         const currentUser = currentUserFixtures.adminUser;
-
         // act
         render(
             <QueryClientProvider client={queryClient}>
@@ -153,12 +148,9 @@ describe("MenuItemReviewTable tests", () => {
                 </MemoryRouter>
             </QueryClientProvider>
         );
-
         // assert
         const deleteButton = screen.getByTestId(`MenuItemReviewTable-cell-row-0-col-Delete-button`);
         expect(deleteButton).toBeInTheDocument();
-
         fireEvent.click(deleteButton);
-
     });
 });
