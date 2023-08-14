@@ -90,7 +90,6 @@ describe("UCSBOrganizationForm tests", () => {
         expect(screen.getByText(`Inactive`)).toBeInTheDocument();
 
         expect(await screen.findByTestId(`${testId}-submit`)).toBeInTheDocument();
-        const cancelButton = screen.getByTestId(`${testId}-submit`);
 
         expect(await screen.findByText(/Create/)).toBeInTheDocument();
         const submitButton = screen.getByText(/Create/);
