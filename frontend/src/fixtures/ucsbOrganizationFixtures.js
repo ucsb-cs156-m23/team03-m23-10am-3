@@ -10,19 +10,19 @@ const ucsbOrganizationFixtures = {
             "orgCode": "KRC",
             "orgTranslationShort": "KOREAN RADIO CL",
             "orgTranslation": "KOREAN RADIO CLUB",
-            "inactive": false
+            "inactive": "false"
         },
         {
             "orgCode": "OSLI",
             "orgTranslationShort": "STUDENT LIFE",
             "orgTranslation": "OFFICE OF STUDENT LIFE",
-            "inactive": true
+            "inactive": "true"
         },
         {
             "orgCode": "ZPR",
             "orgTranslationShort": "ZETA PHI RHO",
             "orgTranslation": "ZETA PHI RHO",
-            "inactive": true
+            "inactive": "true"
         }
     ]
 };
