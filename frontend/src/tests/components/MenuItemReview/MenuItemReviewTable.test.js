@@ -133,7 +133,7 @@ describe("MenuItemReviewTable tests", () => {
         const editButton = screen.getByTestId(`MenuItemReviewTable-cell-row-0-col-Edit-button`);
         expect(editButton).toBeInTheDocument();
         fireEvent.click(editButton);
-        await waitFor(() => expect(mockedNavigate).toHaveBeenCalledWith(`/menuitemreviews/edit/${menuItemReviewFixtures.threeMenuItemReviews[0].id}`));
+        await waitFor(() => expect(mockedNavigate).toHaveBeenCalledWith(`/menuitemreview/edit/${menuItemReviewFixtures.threeMenuItemReviews[0].id}`));
 
     });
 
