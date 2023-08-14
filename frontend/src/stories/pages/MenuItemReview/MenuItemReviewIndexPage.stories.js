@@ -1,17 +1,16 @@
 import React from 'react';
 import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
+import { menuItemReviewFixtures } from 'fixtures/menuItemReviewFixtures';
 import { rest } from "msw";
-
-import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
-import { helpRequestFixtures } from 'fixtures/helpRequestFixtures';
+import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
 
 export default {
-    title: 'pages/HelpRequest/HelpRequestIndexPage',
-    component: HelpRequestIndexPage
+    title: 'pages/MenuItemReview/MenuItemReviewIndexPage',
+    component: MenuItemReviewIndexPage,
 };
 
-const Template = () => <HelpRequestIndexPage storybook={true}/>;
+const Template = () => <MenuItemReviewIndexPage storybook={true} />;
 
 export const Empty = Template.bind({});
 Empty.parameters = {
@@ -22,7 +21,7 @@ Empty.parameters = {
         rest.get('/api/systemInfo', (_req, res, ctx) => {
             return res(ctx.json(systemInfoFixtures.showingNeither));
         }),
-        rest.get('/api/helprequest/all', (_req, res, ctx) => {
+        rest.get('/api/menuitemreview/all', (_req, res, ctx) => {
             return res(ctx.json([]));
         }),
     ]
@@ -33,13 +32,13 @@ export const ThreeItemsOrdinaryUser = Template.bind({});
 ThreeItemsOrdinaryUser.parameters = {
     msw: [
         rest.get('/api/currentUser', (_req, res, ctx) => {
-            return res( ctx.json(apiCurrentUserFixtures.userOnly));
+            return res(ctx.json(apiCurrentUserFixtures.userOnly));
         }),
         rest.get('/api/systemInfo', (_req, res, ctx) => {
             return res(ctx.json(systemInfoFixtures.showingNeither));
         }),
-        rest.get('/api/helprequest/all', (_req, res, ctx) => {
-            return res(ctx.json(helpRequestFixtures.threeHelpRequests));
+        rest.get('/api/menuitemreview/all', (_req, res, ctx) => {
+            return res(ctx.json(menuItemReviewFixtures.threeMenuItemReviews));
         }),
     ],
 }
@@ -49,17 +48,17 @@ export const ThreeItemsAdminUser = Template.bind({});
 ThreeItemsAdminUser.parameters = {
     msw: [
         rest.get('/api/currentUser', (_req, res, ctx) => {
-            return res( ctx.json(apiCurrentUserFixtures.adminUser));
+            return res(ctx.json(apiCurrentUserFixtures.adminUser));
         }),
         rest.get('/api/systemInfo', (_req, res, ctx) => {
             return res(ctx.json(systemInfoFixtures.showingNeither));
         }),
-        rest.get('/api/helprequest/all', (_req, res, ctx) => {
-            return res(ctx.json(helpRequestFixtures.threeHelpRequests));
+        rest.get('/api/menuitemreview/all', (_req, res, ctx) => {
+            return res(ctx.json(menuItemReviewFixtures.threeMenuItemReviews));
         }),
-        rest.delete('/api/helprequest', (req, res, ctx) => {
+        rest.delete('/api/menuitemreview', (req, res, ctx) => {
             window.alert("DELETE: " + JSON.stringify(req.url));
-            return res(ctx.status(200),ctx.json({}));
+            return res(ctx.status(200), ctx.json({}));
         }),
     ],
 }

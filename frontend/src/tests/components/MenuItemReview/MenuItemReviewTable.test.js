@@ -39,7 +39,8 @@ describe("MenuItemReviewTable tests", () => {
             expectedFields.forEach((field) => {
                 expect(screen.getByTestId(`${testIdPrefix}-${field}`)).toBeInTheDocument();
             });
-            expect(screen.getByText("ID")).toBeInTheDocument();
+
+            expect(screen.getByText("Id")).toBeInTheDocument();
     });
 
     test("Has the expected column headers, content and buttons for admin user", () => {
@@ -53,10 +54,12 @@ describe("MenuItemReviewTable tests", () => {
             </MemoryRouter>
         </QueryClientProvider>
         );
+
         // assert
         expectedHeaders.forEach((header) => {
             expect(screen.getByText(header)).toBeInTheDocument();
         });
+
         expectedFields.forEach((field) => {
             expect(screen.getByTestId(`${testIdPrefix}-${field}`)).toBeInTheDocument();
         });
@@ -82,6 +85,7 @@ describe("MenuItemReviewTable tests", () => {
     test("Has the expected column headers, content for ordinary user", () => {
         // arrange
         const currentUser = currentUserFixtures.userOnly;
+
         // act
         render(
             <QueryClientProvider client={queryClient}>
@@ -90,10 +94,12 @@ describe("MenuItemReviewTable tests", () => {
                 </MemoryRouter>
             </QueryClientProvider>
         );
+
         // assert
         expectedHeaders.forEach((header) => {
             expect(screen.getByText(header)).toBeInTheDocument();
         });
+
         expectedFields.forEach((field) => {
             expect(screen.getByTestId(`${testIdPrefix}-${field}`)).toBeInTheDocument();
         });
@@ -122,11 +128,13 @@ describe("MenuItemReviewTable tests", () => {
                 </MemoryRouter>
             </QueryClientProvider>
         );
+
         // assert
         const editButton = screen.getByTestId(`MenuItemReviewTable-cell-row-0-col-Edit-button`);
         expect(editButton).toBeInTheDocument();
         fireEvent.click(editButton);
-        await waitFor(() => expect(mockedNavigate).toHaveBeenCalledWith(`/menuitemreviews/edit/${menuItemReviewFixtures.threeMenuItemReviews[0].id}`));
+        await waitFor(() => expect(mockedNavigate).toHaveBeenCalledWith(`/menuitemreview/edit/${menuItemReviewFixtures.threeMenuItemReviews[0].id}`));
+
     });
 
     test("Delete button calls delete callback", async () => {

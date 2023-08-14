@@ -3,14 +3,14 @@ import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
 import { rest } from "msw";
 
-import UCSBDiningCommonsMenuCreatePage from "main/pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuCreatePage"
+import MenuItemReviewCreatePage from 'main/pages/MenuItemReview/MenuItemReviewCreatePage';
 
 export default {
-    title: 'pages/UCSBDiningCommonsMenu/UCSBDiningCommonsMenuCreatePage',
-    component: UCSBDiningCommonsMenuCreatePage
+    title: 'pages/MenuItemReview/MenuItemReviewCreatePage',
+    component: MenuItemReviewCreatePage,
 };
 
-const Template = () => <UCSBDiningCommonsMenuCreatePage storybook={true} />;
+const Template = () => <MenuItemReviewCreatePage storybook={true} />;
 
 export const Default = Template.bind({});
 Default.parameters = {
@@ -21,12 +21,11 @@ Default.parameters = {
         rest.get('/api/systemInfo', (_req, res, ctx) => {
             return res(ctx.json(systemInfoFixtures.showingNeither));
         }),
-        rest.post('/api/ucsbdiningcommonsmenu/post', (req, res, ctx) => {
+        rest.post('/api/menuitemreview/post', (req, res, ctx) => {
             window.alert("POST: " + JSON.stringify(req.url));
             return res(ctx.status(200),ctx.json({}));
         }),
     ]
 }
-
 
 
