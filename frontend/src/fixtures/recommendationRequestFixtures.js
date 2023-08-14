@@ -6,7 +6,7 @@ const recommendationRequestFixtures = {
         "explanation" : "For X graduate program",
         "dateRequested": "2022-01-02T12:00:00",
         "dateNeeded" : "2022-01-02T12:00:00",
-        "done" : true
+        "done" : "true"
     },  
     threeRecommendationRequest: [
         {
