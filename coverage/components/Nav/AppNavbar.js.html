@@ -142,17 +142,13 @@
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">197x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">191x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -231,43 +227,40 @@ import { hasRole } from "main/utils/currentUser";
 import AppNavbarLocalhost from "main/components/Nav/AppNavbarLocalhost"
 &nbsp;
 export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUrl = window.location.href }) {
-  return (
-    &lt;&gt;
-      {
-        (currentUrl.startsWith("http://localhost:3000") ||
-          currentUrl.startsWith("http://127.0.0.1:3000")) &amp;&amp; (
-          &lt;AppNavbarLocalhost url={currentUrl} /&gt;
-        )
-      }
-      &lt;Navbar expand="xl" variant="dark" bg="dark" sticky="top" data-testid="AppNavbar"&gt;
-        &lt;Container&gt;
-          &lt;Navbar.Brand as={Link} to="/"&gt;
-            Example
-          &lt;/Navbar.Brand&gt;
-&nbsp;
-          &lt;Navbar.Toggle /&gt;
-&nbsp;
-          &lt;Nav className="me-auto"&gt;
+    return (
+        &lt;&gt;
             {
-              systemInfo?.springH2ConsoleEnabled &amp;&amp; (
-                &lt;&gt;
-                  &lt;Nav.Link href="/h2-console"&gt;H2Console&lt;/Nav.Link&gt;
-                &lt;/&gt;
-              )
+                (currentUrl.startsWith("http://localhost:3000") ||
+                    currentUrl.startsWith("http://127.0.0.1:3000")) &amp;&amp; (
+                    &lt;AppNavbarLocalhost url={currentUrl} /&gt;
+                )
             }
-            {
-              systemInfo?.showSwaggerUILink &amp;&amp; (
-                &lt;&gt;
-                  &lt;Nav.Link href="/swagger-ui/index.html"&gt;Swagger&lt;/Nav.Link&gt;
-                &lt;/&gt;
-              )
-            }
-          &lt;/Nav&gt;
+            &lt;Navbar expand="xl" variant="dark" bg="dark" sticky="top" data-testid="AppNavbar"&gt;
+                &lt;Container&gt;
+                    &lt;Navbar.Brand as={Link} to="/"&gt;
+                        Example
+                    &lt;/Navbar.Brand&gt;
 &nbsp;
-          &lt;&gt;
-            {/* be sure that each NavDropdown has a unique id and data-testid  */}
-          &lt;/&gt;
-&nbsp;
+                    &lt;Navbar.Toggle /&gt;
+                    &lt;Nav className="me-auto"&gt;
+                        {
+                            systemInfo?.springH2ConsoleEnabled &amp;&amp; (
+                                &lt;&gt;
+                                    &lt;Nav.Link href="/h2-console"&gt;H2Console&lt;/Nav.Link&gt;
+                                &lt;/&gt;
+                            )
+                        }
+                        {
+                            systemInfo?.showSwaggerUILink &amp;&amp; (
+                                &lt;&gt;
+                                    &lt;Nav.Link href="/swagger-ui/index.html"&gt;Swagger&lt;/Nav.Link&gt;
+                                &lt;/&gt;
+                            )
+                        }
+                    &lt;/Nav&gt;
+                    &lt;&gt;
+                        {/* be sure that each NavDropdown has a unique id and data-testid  */}
+                    &lt;/&gt;
           &lt;Navbar.Collapse className="justify-content-between"&gt;
             &lt;Nav className="mr-auto"&gt;
               {
@@ -284,6 +277,7 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                   &lt;Nav.Link as={Link} to="/restaurants"&gt;Restaurants&lt;/Nav.Link&gt;
                   &lt;Nav.Link as={Link} to="/ucsbdates"&gt;UCSB Dates&lt;/Nav.Link&gt;
                   &lt;Nav.Link as={Link} to="/placeholder"&gt;Placeholder&lt;/Nav.Link&gt;
+                  &lt;Nav.Link as={Link} to="/recommendationrequest"&gt;Recommendation Requests&lt;/Nav.Link&gt;
                   &lt;Nav.Link as={Link} to="/helprequest"&gt;HelpRequest&lt;/Nav.Link&gt;
                   &lt;Nav.Link as={Link} to="/ucsbdiningcommonsmenu"&gt;UCSBDiningCommonsMenu&lt;/Nav.Link&gt;
                 &lt;/&gt;
@@ -313,7 +307,7 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Aug 14 2023 08:06:26 GMT-0700 (Pacific Daylight Time)
+                at Mon Aug 14 2023 14:42:00 GMT-0700 (Pacific Daylight Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
