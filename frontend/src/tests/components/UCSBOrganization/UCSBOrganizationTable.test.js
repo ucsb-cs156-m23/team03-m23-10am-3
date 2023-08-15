@@ -16,7 +16,7 @@ jest.mock('react-router-dom', () => ({
 describe("UCSBOrganizationTable tests", () => {
   const queryClient = new QueryClient();
 
-  const expectedHeaders = ["orgCode", "orgTranslationShort", "orgTranslation", "inactive"];
+  const expectedHeaders = ["orgCode", "orgTranslationShort", "orgTranslation", "Inactive"];
   const expectedFields = ["orgCode", "orgTranslationShort", "orgTranslation", "inactive"];
   const testId = "UCSBOrganizationTable";
 
