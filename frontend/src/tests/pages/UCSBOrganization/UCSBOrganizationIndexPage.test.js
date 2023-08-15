@@ -136,7 +136,7 @@ describe("UCSBOrganizationIndexPage tests", () => {
 
         await waitFor(() => { expect(screen.getByTestId(`${testId}-cell-row-0-col-orgCode`)).toBeInTheDocument(); });
 
-        //expect(screen.getByTestId(`${testId}-cell-row-0-col-orgCode`)).toHaveTextContent("OSLI");
+        expect(screen.getByTestId(`${testId}-cell-row-0-col-orgCode`)).toHaveTextContent("KRC");
 
         const deleteButton = screen.getByTestId(`${testId}-cell-row-0-col-Delete-button`);
         expect(deleteButton).toBeInTheDocument();
@@ -148,7 +148,7 @@ describe("UCSBOrganizationIndexPage tests", () => {
         await waitFor(() => { expect(axiosMock.history.delete.length).toBe(1); });
         expect(axiosMock.history.delete[0].url).toBe("/api/ucsborganization");
         expect(axiosMock.history.delete[0].url).toBe("/api/ucsborganization");
-        //expect(axiosMock.history.delete[0].params).toEqual({ orgCode: "OSLI" });
+        expect(axiosMock.history.delete[0].params).toEqual({ orgCode: "KRC" });
     });
 
 });
