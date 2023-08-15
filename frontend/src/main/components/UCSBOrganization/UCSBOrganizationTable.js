@@ -2,7 +2,7 @@ import React from "react";
 import OurTable, { ButtonColumn } from "main/components/OurTable";
 
 import { useBackendMutation } from "main/utils/useBackend";
-import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/restaurantUtils"
+import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/UCSBOrganizationsUtils"
 import { useNavigate } from "react-router-dom";
 import { hasRole } from "main/utils/currentUser";
 
@@ -44,8 +44,9 @@ export default function UCSBOrganizationTable({
             accessor: 'orgTranslation',
         },
         {
-            Header: 'inactive',
-            accessor: 'inactive',
+            id: 'inactive',
+            Header: 'Inactive',
+            accessor: (row, _rowIndex) => String(row.inactive),
         }
     ];
 

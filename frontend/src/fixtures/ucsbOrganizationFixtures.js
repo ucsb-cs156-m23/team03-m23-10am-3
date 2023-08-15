@@ -3,7 +3,7 @@ const ucsbOrganizationFixtures = {
         "orgCode": "KRC",
         "orgTranslationShort": "KOREAN RADIO CL",
         "orgTranslation": "KOREAN RADIO CLUB",
-        "inactive": false
+        "inactive": "false"
     },
     threeOrganizations: [
         {
@@ -16,7 +16,7 @@ const ucsbOrganizationFixtures = {
             "orgCode": "OSLI",
             "orgTranslationShort": "STUDENT LIFE",
             "orgTranslation": "OFFICE OF STUDENT LIFE",
-            "inactive": "true"
+            "inactive": "false"
         },
         {
             "orgCode": "ZPR",

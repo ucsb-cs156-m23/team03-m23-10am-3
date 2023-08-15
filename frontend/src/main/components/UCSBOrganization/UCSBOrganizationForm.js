@@ -22,7 +22,7 @@ function UCSBOrganizationForm({ initialContents, submitAction, buttonLabel = "Cr
     return (
         <Form onSubmit={handleSubmit(submitAction)}>
 
-            {initialContents && (
+            {
                 <Form.Group className="mb-3" >
                     <Form.Label htmlFor="orgCode">Organization Code</Form.Label>
                     <Form.Control
@@ -30,11 +30,9 @@ function UCSBOrganizationForm({ initialContents, submitAction, buttonLabel = "Cr
                         id="orgCode"
                         type="text"
                         {...register("orgCode")}
-                        value={initialContents.id}
-                        disabled
                     />
                 </Form.Group>
-            )}
+            }
 
             <Form.Group className="mb-3" >
                 <Form.Label htmlFor="orgTranslationShort">Organization Translation Short</Form.Label>
