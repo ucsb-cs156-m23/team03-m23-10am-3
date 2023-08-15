@@ -80,10 +80,11 @@ describe("UCSBOrganizationEditPage tests", () => {
                 inactive: "false"
             });
             axiosMock.onPut('/api/ucsborganization').reply(200, {
-                id: "KRC",
+                orgCode: "KRC",
                 orgTranslationShort: "KOREAN RADIO",
                 orgTranslation: "Korean Radio Club",
                 inactive: "true"
+                
             });
         });
 
@@ -131,10 +132,12 @@ describe("UCSBOrganizationEditPage tests", () => {
             expect(axiosMock.history.put.length).toBe(1); // times called
             expect(axiosMock.history.put[0].params).toEqual({ orgCode: "KRC" });
             expect(axiosMock.history.put[0].data).toBe(JSON.stringify({
+                orgCode: 'KRC',
                 orgTranslationShort: 'KOREAN RADIO',
                 orgTranslation: 'Korean Radio Club',
                 inactive: "true"
             })); // posted object
+
 
 
         });

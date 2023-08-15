@@ -28,6 +28,7 @@ export default function UCSBOrganizationEditPage({storybook=false}) {
             orgCode: ucsborganization.orgCode
         },
         data: {
+            orgCode: ucsborganization.orgCode,
             orgTranslationShort: ucsborganization.orgTranslationShort,
             orgTranslation: ucsborganization.orgTranslation,
             inactive: ucsborganization.inactive,
@@ -35,7 +36,7 @@ export default function UCSBOrganizationEditPage({storybook=false}) {
     });
 
     const onSuccess = (ucsborganization) => {
-        toast(`UCSB Organization Updated - orgCode: ${ucsborganization.id}`);
+        toast(`UCSB Organization Updated - orgCode: ${ucsborganization.orgCode}`);
     }
 
     const mutation = useBackendMutation(
