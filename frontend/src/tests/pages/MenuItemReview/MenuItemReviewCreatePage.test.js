@@ -59,7 +59,7 @@ describe("MenuItemReviewCreatePage tests", () => {
             "itemId": "1337",
             "reviewerEmail": "testtest@ucsb.edu",
             "stars": "2",
-            "dateReviewed": "2023-08-11T12:00:00.000Z",
+            "dateReviewed": "2023-08-11T12:00",
             "comments": "This is 1337"
         };
 

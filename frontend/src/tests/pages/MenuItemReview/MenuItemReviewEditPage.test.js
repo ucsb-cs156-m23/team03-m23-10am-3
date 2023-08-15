@@ -74,7 +74,7 @@ describe("MenuItemReviewEditPage tests", () => {
                 "itemId": 1,
                 "reviewerEmail": "a@ucsb.edu",
                 "stars": 1,
-                "dateReviewed": "2023-08-11T12:00:00.000Z",
+                "dateReviewed": "2023-08-11T12:00",
                 "comments": "First"
             });
             axiosMock.onPut("/api/menuitemreview").reply(200, {
@@ -82,7 +82,7 @@ describe("MenuItemReviewEditPage tests", () => {
                 "itemId": 2,
                 "reviewerEmail": "b@ucsb.edu",
                 "stars": 2,
-                "dateReviewed": "2023-08-12T12:00:00.000Z",
+                "dateReviewed": "2023-08-12T12:00",
                 "comments": "Second"
             });
         });
@@ -119,13 +119,13 @@ describe("MenuItemReviewEditPage tests", () => {
             expect(itemIdField).toHaveValue("1");
             expect(reviewerEmailField).toHaveValue("a@ucsb.edu");
             expect(starsField).toHaveValue("1");
-            expect(dateReviewedField).toHaveValue("2023-08-11T12:00:00.000Z");
+            expect(dateReviewedField).toHaveValue("2023-08-11T12:00");
             expect(commentsField).toHaveValue("First");
 
             const newItemId = "2";
             const newReviewerEmail = "b@ucsb.edu";
             const newStars = "2";
-            const newDateReviewed = "2023-08-12T12:00:00.000Z";
+            const newDateReviewed = "2023-08-12T12:00";
             const newComments = "Second";
 
             // change all the fields
