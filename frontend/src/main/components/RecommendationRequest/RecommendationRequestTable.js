@@ -53,8 +53,9 @@ export default function RecommendationRequestTable({ recrequests, currentUser, t
             accessor: 'dateNeeded',
         },
         {
+            id: 'done',
             Header: 'Done',
-            accessor: 'done',
+            accessor: d => d.done ? "true": "false",
         }
     ];
 
