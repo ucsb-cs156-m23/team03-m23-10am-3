@@ -88,7 +88,7 @@ describe("UCSBOrganizationIndexPage tests", () => {
         const orgTranslation = screen.getByText("KOREAN RADIO CLUB");
         expect(orgTranslation).toBeInTheDocument();
 
-        const inactive = screen.getByText("false");
+        const inactive = screen.getByText("inactive");
         expect(inactive).toBeInTheDocument();
 
         // for non-admin users, details button is visible, but the edit and delete buttons should not be visible

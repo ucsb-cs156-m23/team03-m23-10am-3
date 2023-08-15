@@ -78,7 +78,7 @@ describe("UCSBOrganizationTable tests", () => {
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgCode`)).toHaveTextContent("OSLI");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgTranslationShort`)).toHaveTextContent("STUDENT LIFE");
     expect(screen.getByTestId(`${testId}-cell-row-1-col-orgTranslation`)).toHaveTextContent("OFFICE OF STUDENT LIFE");
-    expect(screen.getByTestId(`${testId}-cell-row-1-col-inactive`)).toHaveTextContent("true");
+    expect(screen.getByTestId(`${testId}-cell-row-1-col-inactive`)).toHaveTextContent("false");
 
     expect(screen.getByTestId(`${testId}-cell-row-2-col-orgCode`)).toHaveTextContent("ZPR");
     expect(screen.getByTestId(`${testId}-cell-row-2-col-orgTranslationShort`)).toHaveTextContent("ZETA PHI RHO");
