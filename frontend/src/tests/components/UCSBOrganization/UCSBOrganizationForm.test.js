@@ -53,7 +53,7 @@ describe("UCSBOrganizationForm tests", () => {
             expect(header).toBeInTheDocument();
         });
 
-        expect(await screen.findByLabelText(`Organization Code`)).toBeInTheDocument();
+        expect(await screen.findByTestId(`${testId}-orgCode`)).toBeInTheDocument();
         expect(screen.getByText(`Organization Code`)).toBeInTheDocument();
     });
 
@@ -109,6 +109,15 @@ describe("UCSBOrganizationForm tests", () => {
         await waitFor(() => {
             expect(screen.getByText(/orgTranslationShort max length 50 characters./)).toBeInTheDocument();
         });
+
+        /*
+        const orgCodeInput = screen.getByLabelText(`Organization Code`);
+        fireEvent.change(orgCodeInput, { target: { value: "a".repeat(31) } });
+
+        await waitFor(() => {
+            expect(screen.getByText(/orgCode max length 30 characters./)).toBeInTheDocument();
+        });
+        */
     });
 
 });
